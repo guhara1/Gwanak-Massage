@@ -176,7 +176,7 @@ STATIONS = [
     {"slug": "sillim-station", "name": "신림역", "line": "2호선·신림선",
      "group": "line2",
      "title": "신림역 출장마사지 | 관악구 신림역 인근 방문 마사지",
-     "desc": "신림역 출장마사지 안내 페이지입니다. 관악구 신림역 인근 방문 가능 지역, 예약 가능 시간, 코스 선택 기준, 이용 전 확인사항을 확인해보세요.",
+     "desc": "신림역 출장마사지 방문 안내. 관악구 신림역 인근 방문 가능 지역과 예약 시간, 코스 선택 기준을 확인해보세요.",
      "addr": "서울 관악구 남부순환로 지하1614",
      "arrival": 18,
      "summary": "2호선·신림선 환승역인 신림역은 관악구에서 검색 수요가 가장 큰 핵심 역세권입니다.",
@@ -210,7 +210,7 @@ STATIONS = [
     {"slug": "bongcheon-station", "name": "봉천역", "line": "2호선",
      "group": "line2",
      "title": "봉천역 출장마사지 | 관악구 봉천역 인근 방문 마사지",
-     "desc": "봉천역 출장마사지 안내 페이지입니다. 봉천역, 은천동, 중앙동 생활권 인근 방문 가능 지역과 예약 가능 시간, 코스 선택 기준을 확인해보세요.",
+     "desc": "봉천역 출장마사지 방문 안내. 봉천역·은천동·중앙동 인근 생활권과 예약 시간, 코스 기준을 확인해보세요.",
      "addr": "서울 관악구 남부순환로 지하1721",
      "arrival": 20,
      "summary": "2호선 봉천역은 관악중앙시장과 대단지 아파트가 어우러진 봉천 중심 역세권입니다.",
@@ -244,7 +244,7 @@ STATIONS = [
     {"slug": "danggok-station", "name": "당곡역", "line": "신림선",
      "group": "sillimline",
      "title": "당곡역 출장마사지 | 관악구 당곡역 인근 방문 마사지",
-     "desc": "당곡역 출장마사지 안내입니다. 신림선 당곡역 인근 신원동·서원동 생활권의 방문 가능 지역, 예약 가능 시간, 코스 선택 기준을 확인해보세요.",
+     "desc": "당곡역 출장마사지 방문 안내. 신림선 당곡역 인근 신원동·서원동 생활권과 예약 시간을 확인해보세요.",
      "addr": "서울 관악구 신림로 지하",
      "arrival": 21,
      "summary": "신림선 당곡역은 신림 남부 주거 생활권과 신림역 상권 사이를 잇는 역세권입니다.",
@@ -278,7 +278,7 @@ STATIONS = [
     {"slug": "seoul-national-university-venture-town-station", "name": "서울대벤처타운역", "line": "신림선",
      "group": "sillimline",
      "title": "서울대벤처타운역 출장마사지 | 관악구 신림선 방문 마사지",
-     "desc": "서울대벤처타운역 출장마사지 안내입니다. 신림선 서울대벤처타운역 인근 대학동·신림동 생활권의 방문 가능 지역과 코스 선택 기준을 확인해보세요.",
+     "desc": "서울대벤처타운역 출장마사지 방문 안내. 신림선 대학동·신림동 생활권의 방문 지역과 코스 기준을 확인해보세요.",
      "addr": "서울 관악구 신림로 지하",
      "arrival": 24,
      "summary": "신림선 서울대벤처타운역은 서울대학교 진입로와 대학동 고시촌을 낀 학생·청년 역세권입니다.",
@@ -1305,7 +1305,7 @@ def build_home():
 """
     jsonld = [org_ld(), website_ld(), localbiz_ld(), offer_ld(), faq_ld(HOME_FAQ)]
     html = page("/", f"{BRAND} | 서울 관악구 방문 마사지 예약 안내",
-                "간다GO 관악 출장마사지는 서울 관악구 봉천동, 신림동, 남현동과 서울대입구·낙성대·신림역 일대 방문 마사지 예약 안내를 제공합니다. 연중무휴 24시간 상담.",
+                "간다GO 관악 출장마사지 - 봉천·신림·남현과 서울대입구·낙성대·신림역 방문 예약 안내. 연중무휴 24시간 상담.",
                 "home", body, jsonld)
     write("/", html)
 
@@ -1449,7 +1449,7 @@ def build_gwanak():
               service_ld("관악 출장마사지", "서울 관악구 전 지역 방문 건강관리 서비스", "/gwanak-gu/"),
               offer_ld(), faq_ld(gwanak_faq)]
     html = page("/gwanak-gu/", "관악 출장마사지 | 간다GO 관악구 방문 마사지 예약 안내",
-        "관악 출장마사지 대표 안내 - 봉천·신림·남현 3개 권역과 서울대입구·낙성대·신림역 역세권의 방문 가능 지역, 예약 시간, 코스, 위생 안내를 한곳에 정리했습니다. 연중무휴 24시간 상담.",
+        "관악 출장마사지 대표 안내. 봉천·신림·남현 3개 권역과 2호선·신림선 역세권의 방문 지역·예약·코스를 한곳에 정리했습니다.",
         "gwanak", body, jsonld)
     write("/gwanak-gu/", html)
 
@@ -1505,7 +1505,7 @@ def build_area_hub():
                      "url": BASE_URL + f"/gwanak-gu/{r['slug']}/"} for r in REGIONS],
     }
     html = page("/gwanak-gu/area/", "관악구 출장마사지 가능 지역 | 간다GO 지역별 안내",
-        "간다GO 관악 출장마사지 지역별 안내 - 봉천권역, 신림권역, 남현권역 3개 권역과 22개 동, 2호선·신림선 역세권별 방문 안내를 제공합니다.",
+        "관악구 출장마사지 지역별 안내. 봉천·신림·남현 3개 권역 22개 동과 2호선·신림선 역세권 방문을 안내합니다.",
         "area", body, [bc_ld(trail), item_list, faq_ld(hub_faq), offer_ld()])
     write("/gwanak-gu/area/", html)
 
@@ -1573,10 +1573,10 @@ def build_area_pages():
                     '<a href="/course/">코스안내 · 가격</a>'])]))
         top_links = [("tel:" + PHONE_TEL, "예약문의", True), ("/course/", "코스안내"),
                      ("/gwanak-gu/", "관악 출장마사지 대표"), ("/gwanak-gu/area/", "지역별 안내")]
+        _rn = "·".join(d["name"] for d in r["dongs"][:3]) + (" 등" if len(r["dongs"]) > 3 else "")
         content_page(f"/gwanak-gu/{r['slug']}/", "area", trail,
             title=f"{r['name']} 출장마사지 | 관악구 {r['name']} 방문 마사지",
-            desc=f"{r['name']} 출장마사지 안내 - " + ", ".join(d['name'] for d in r['dongs']) +
-                 f" 일대 방문 건강관리 예약 안내입니다. {r['summary']}",
+            desc=f"관악구 {r['name']} 출장마사지 방문 안내. {_rn} 생활권의 방문 지역·예약 시간·코스 기준을 확인하세요.",
             eyebrow=f"관악구 · {r['name']}", h1=f"{r['name']} 출장마사지", lead=r["summary"],
             sections=sections, faq=area_faq, top_links=top_links,
             cta_title=f"{r['name']} 방문 예약을 도와드릴까요?",
@@ -1757,7 +1757,7 @@ def build_dong_pages():
                     f"평균 {d['arrival']}분 내외로 도착합니다.")
             content_page(path, "area", trail,
                 title=f"{name} 출장마사지 | 관악구 {name} 방문 마사지 예약 안내",
-                desc=f"관악구 {name} 출장마사지 안내 페이지입니다. {station_list} 인근 방문 가능 지역과 예약 가능 시간, 코스 선택 기준을 확인해보세요.",
+                desc=f"관악구 {name} 출장마사지 방문 안내. {first_station} 인근 생활권과 예약 가능 시간, 코스 선택 기준을 확인하세요.",
                 eyebrow=f"관악구 {name}", h1=f"{name} 출장마사지 예약 안내", lead=lead,
                 sections=sections, faq=dong_faq,
                 data_note=f"{name} 일대는 평균 {d['arrival']}분 내외로 도착합니다(예약 데이터 기준). 저녁·주말은 문의가 몰려 도착이 다소 길어질 수 있어 사전 예약을 권장드립니다.",
@@ -1813,7 +1813,7 @@ def build_stations_hub():
                      "url": BASE_URL + f'/gwanak-gu/stations/{s["slug"]}/'} for s in STATIONS],
     }
     html = page("/gwanak-gu/stations/", "관악구 지하철역 출장마사지 | 2호선·신림선 방문 안내",
-        "관악구 지하철역 출장마사지 안내 - 2호선(신림·서울대입구·봉천·낙성대)과 신림선(당곡·서원·서울대벤처타운·관악산) 역세권 방문 마사지를 안내합니다.",
+        "관악구 지하철역 출장마사지 안내. 2호선(신림·서울대입구·봉천·낙성대)과 신림선(당곡·서원·관악산 등) 역세권 방문 안내.",
         "stations", body, [bc_ld(trail), coll, offer_ld()])
     write("/gwanak-gu/stations/", html)
 
@@ -1959,7 +1959,7 @@ def build_reservation():
         notes_block("HOW TO BOOK", "예약 진행 안내", "아래 순서대로 진행됩니다.", notes, _id="about") +
         faq_block(res_faq) + cta_band())
     html = page("/reservation/", "예약안내 | 관악구 출장마사지 예약 방법·결제 안내",
-        "간다GO 관악 출장마사지 예약안내 - 예약 방법, 예약 가능 시간, 방문 가능 장소, 결제와 변경·취소 안내를 제공합니다. 연중무휴 24시간 상담.",
+        "관악 출장마사지 예약안내. 예약 방법, 가능 시간, 방문 장소, 결제·변경·취소를 안내합니다(24시간 상담).",
         "reservation", body, [bc_ld(trail), faq_ld(res_faq)])
     write("/reservation/", html)
 
@@ -1988,7 +1988,7 @@ def build_guide():
         notes_block("USER GUIDE", "이용 안내", "방문 전후 확인하세요.", notes, _id="about") +
         faq_block(guide_faq) + cta_band())
     html = page("/guide/", "이용가이드 | 관악구 출장마사지 방문 전 준비·주의사항",
-        "간다GO 관악 출장마사지 이용가이드 - 처음 이용하시는 분을 위한 방문 전 준비사항, 위생·안전 기준, 관리 후 주의사항과 금지행위 안내입니다.",
+        "관악 출장마사지 이용가이드. 방문 전 준비사항, 위생·안전 기준, 관리 후 주의사항과 금지행위를 안내합니다.",
         "guide", body, [bc_ld(trail), faq_ld(guide_faq)])
     write("/guide/", html)
 
@@ -2106,7 +2106,7 @@ def build_course_pages():
 
     content_page("/course/fatigue/", "course", ct + [(None, "피로 회복 관리")],
         title="피로 회복 관리 | 관악 출장마사지 스웨디시 계열 방문 관리",
-        desc="관악 출장마사지 피로 회복 관리 안내 - 전신 긴장을 부드럽게 풀어주는 스웨디시 계열 방문 관리입니다. 대상, 60·90·120분 진행 방식, 방문 관리의 장점, 자주 묻는 질문을 확인하세요.",
+        desc="관악 출장마사지 피로 회복 관리 안내. 전신 긴장을 풀어주는 스웨디시 계열 방문 관리의 대상·진행·요금을 확인하세요.",
         eyebrow="COURSE · 피로 회복", h1="피로 회복 관리",
         lead="전신의 근육 긴장을 부드럽게 풀어주는 스웨디시 계열 기본 방문 관리입니다.",
         sections=[
@@ -2148,7 +2148,7 @@ def build_course_pages():
 
     content_page("/course/aroma/", "course", ct + [(None, "아로마 관리")],
         title="아로마 관리 | 관악 출장마사지 아로마 오일 방문 관리",
-        desc="관악 출장마사지 아로마 관리 안내 - 블렌딩 오일의 향과 촉감으로 심신을 이완하는 방문 관리입니다. 사용 오일, 사전 확인사항, 진행 방식, 피로 회복 관리와의 차이를 확인하세요.",
+        desc="관악 출장마사지 아로마 관리 안내. 블렌딩 오일로 향과 함께 이완하는 방문 관리의 특징·진행·주의사항을 확인하세요.",
         eyebrow="COURSE · 아로마", h1="아로마 관리",
         lead="블렌딩한 관리용 오일을 사용해 향과 촉감으로 심신을 함께 이완하는 방문 관리입니다.",
         sections=[
@@ -2188,7 +2188,7 @@ def build_course_pages():
 
     content_page("/course/sports/", "course", ct + [(None, "스포츠 관리")],
         title="스포츠 관리 | 관악 출장마사지 운동 후 근육 방문 관리",
-        desc="관악 출장마사지 스포츠 관리 안내 - 운동 후 뭉친 근육과 컨디션 회복에 초점을 맞춘 방문 관리입니다. 적합한 상황, 진행 방식, 주의사항을 확인하세요.",
+        desc="관악 출장마사지 스포츠 관리 안내. 운동 후 뭉친 근육과 컨디션 회복에 초점을 둔 방문 관리를 안내합니다.",
         eyebrow="COURSE · 스포츠", h1="스포츠 관리",
         lead="운동 후 뭉친 근육과 컨디션 회복에 초점을 맞춘 방문 관리입니다.",
         sections=[
@@ -2228,7 +2228,7 @@ def build_course_pages():
 
     content_page("/course/couple/", "course", ct + [(None, "커플·가족 방문 관리")],
         title="커플·가족 방문 관리 | 관악 출장마사지 2인 동반 관리",
-        desc="관악 출장마사지 커플·가족 방문 관리 안내 - 두 분이 같은 공간에서 동시에 받는 동반형 방문 관리입니다. 공간·인원 조건, 예약 방법, 요금 구조를 확인하세요.",
+        desc="관악 출장마사지 커플·가족 방문 관리 안내. 두 분이 동시에 받는 동반 관리의 조건·예약·요금을 확인하세요.",
         eyebrow="COURSE · 커플·가족", h1="커플·가족 방문 관리",
         lead="두 분이 같은 공간에서 동시에 관리를 받는 동반형 방문 관리입니다.",
         sections=[
@@ -2267,7 +2267,7 @@ def build_course_pages():
 
     content_page("/course/group/", "course", ct + [(None, "기업·단체 방문 관리")],
         title="기업·단체 방문 관리 | 관악 출장마사지 단체·행사 관리",
-        desc="관악 출장마사지 기업·단체 방문 관리 안내 - 워크숍·행사·사내 복지 등 단체 인원을 위한 사전 협의형 방문 관리입니다. 진행 방식, 견적·결제, 사전 준비를 확인하세요.",
+        desc="관악 출장마사지 기업·단체 방문 관리 안내. 워크숍·행사 단체 인원을 위한 사전 협의형 방문 관리를 안내합니다.",
         eyebrow="COURSE · 기업·단체", h1="기업·단체 방문 관리",
         lead="워크숍·행사·사내 복지 등 단체 인원을 대상으로 하는 사전 협의형 방문 관리입니다.",
         sections=[
@@ -2311,7 +2311,7 @@ def build_course_pages():
 
     content_page("/course/price/", "course", ct + [(None, "가격 안내")],
         title="가격 안내 | 관악 출장마사지 코스별 정찰 요금",
-        desc="관악 출장마사지 가격 안내 - 코스별 60·90·120분 기본 요금과 정찰 요금 원칙, 변동 요소, 결제 안내를 제공합니다. 숨겨진 추가 비용 없이 투명하게 안내합니다.",
+        desc="관악 출장마사지 가격 안내. 코스별 60·90·120분 정찰 요금과 변동 요소, 결제 방법을 투명하게 안내합니다.",
         eyebrow="COURSE · 가격", h1="가격 안내",
         lead="코스별 기본 요금을 사전에 안내하는 정찰 요금을 원칙으로 합니다.",
         sections=[
@@ -2349,7 +2349,7 @@ def build_course_pages():
 
     content_page("/course/guide/", "course", ct + [(None, "코스 선택 가이드")],
         title="코스 선택 가이드 | 관악 출장마사지 상황별 추천",
-        desc="관악 출장마사지 코스 선택 가이드 - 목적과 상황에 맞는 코스 추천, 60·90·120분 시간 선택 기준, 처음 이용하는 분을 위한 안내를 제공합니다.",
+        desc="관악 출장마사지 코스 선택 가이드. 목적·상황별 추천과 60·90·120분 시간 선택 기준을 안내합니다.",
         eyebrow="COURSE · 선택 가이드", h1="코스 선택 가이드",
         lead="어떤 코스를 골라야 할지 모르겠다면, 목적을 기준으로 선택하면 쉽습니다.",
         sections=[
@@ -2439,7 +2439,7 @@ def build_gwanak_info_pages():
 
     content_page("/gwanak-gu/checklist/", "gwanak", gt + [(None, "이용 전 확인사항")],
         title="이용 전 확인사항 | 관악 출장마사지 방문 준비 안내",
-        desc="관악 출장마사지 이용 전 확인사항 - 방문 장소 준비, 예약 정보, 결제 준비, 이용 시 주의사항을 안내합니다. 만 19세 이상 건강관리 서비스입니다.",
+        desc="관악 출장마사지 이용 전 확인사항. 방문 장소 준비, 예약 정보, 결제, 주의사항을 안내합니다(만 19세 이상).",
         eyebrow="관악 출장마사지 · 확인", h1="이용 전 확인사항",
         lead="원활한 방문을 위해 예약 전 아래 사항을 미리 확인해 주세요.",
         sections=[
@@ -2480,7 +2480,7 @@ def build_gwanak_info_pages():
 
     content_page("/gwanak-gu/safety/", "gwanak", gt + [(None, "위생 및 안전 안내")],
         title="위생 및 안전 안내 | 관악 출장마사지 위생·안전 기준",
-        desc="관악 출장마사지 위생 및 안전 안내 - 용품 위생 관리, 관리사·고객 안전 가이드라인, 비의료 서비스 고지, 개인정보 보호 원칙을 안내합니다.",
+        desc="관악 출장마사지 위생 및 안전 안내. 용품 위생, 관리사·고객 안전, 비의료 고지, 개인정보 보호를 안내합니다.",
         eyebrow="관악 출장마사지 · 안전", h1="위생 및 안전 안내",
         lead="안심하고 받으실 수 있도록 위생과 안전을 운영의 기본 기준으로 둡니다.",
         sections=[
@@ -2521,7 +2521,7 @@ def build_gwanak_info_pages():
 
     content_page("/gwanak-gu/faq/", "gwanak", gt + [(None, "관악 출장마사지 FAQ")],
         title="관악 출장마사지 FAQ | 예약·지역·요금 자주 묻는 질문",
-        desc="관악 출장마사지 자주 묻는 질문 - 방문 가능 지역, 예약 방법, 도착 시간, 코스, 요금, 안전까지 자주 들어오는 질문을 한곳에 정리했습니다.",
+        desc="관악 출장마사지 FAQ. 방문 지역, 예약 방법, 도착 시간, 코스, 요금, 안전을 한곳에 정리했습니다.",
         eyebrow="관악 출장마사지 · FAQ", h1="관악 출장마사지 자주 묻는 질문",
         lead="예약·지역·시간·코스·요금 등 자주 들어오는 질문을 한곳에 정리했습니다.",
         sections=[
