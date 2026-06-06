@@ -26,6 +26,7 @@ PHONE_DISP = "0508-202-4743"                     # 예약 전화번호
 PHONE_TEL  = "+825082024743"                     # tel: 링크용
 HOURS      = "연중무휴 · 24시간 상담"
 INDEXNOW_KEY = "ff387028a8fb421199a855dcb0d5c7a8"   # IndexNow(빙·네이버 등) 인증 키
+NAVER_VERIFY = "b51993b1086bcfb0c3e062ac00f0e7cf72c5250f"   # 네이버 서치어드바이저 사이트 소유확인
 
 COMPANY = {
     "name": "간다GO 헬스케어",
@@ -872,6 +873,7 @@ def page(path, title, desc, active, body, jsonld=None, og_type="website"):
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="googlebot" content="index,follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="naver-site-verification" content="{NAVER_VERIFY}">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="author" content="{COMPANY['name']} 운영팀">
