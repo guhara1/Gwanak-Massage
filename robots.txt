@@ -2,12 +2,28 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Yeti
+Allow: /
+User-agent: NaverBot
+Allow: /
+User-agent: Daumoa
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 User-agent: ClaudeBot
 Allow: /
 User-agent: Google-Extended
 Allow: /
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://gwanak-massage.pages.dev/sitemap.xml
+Sitemap: https://gwanak-massage.pages.dev/rss.xml
 Host: gwanak-massage.pages.dev

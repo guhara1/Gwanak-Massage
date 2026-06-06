@@ -72,6 +72,13 @@ python3 tools/gen_icons.py  # 파비콘 / PWA 아이콘 / OG 이미지 생성 (P
 - CI 자동화: 위 JSON 전체를 GitHub 시크릿 `GOOGLE_INDEXING_SA` 로 넣으면
   워크플로가 IndexNow와 함께 자동 호출합니다.
 
+### 2.5) 네이버 빠른 색인 (Yeti + sitemap + RSS + IndexNow)
+- `robots.txt`에 네이버 **Yeti·NaverBot**, 다음 **Daumoa**, 구글·빙 봇을 명시 허용했습니다.
+- 빌드 시 `sitemap.xml`(lastmod 포함)과 **`rss.xml`**(RSS 2.0, 57개 항목)을 함께 생성합니다.
+- [네이버 서치어드바이저](https://searchadvisor.naver.com) → 사이트 등록(소유확인 메타 적용됨) →
+  **요청 > 사이트맵 제출**에 `sitemap.xml`, **RSS 제출**에 `rss.xml`을 등록하고, **IndexNow 사용 설정**을 켜세요.
+- 이후 `main` 푸시 시 워크플로가 변경 URL을 IndexNow로 즉시 통보합니다(빙·네이버 공통).
+
 ### 3) sitemap ping
 - **Google·Bing의 sitemap ping 엔드포인트는 2023년 폐지**되었습니다(404). 더 이상
   유효하지 않으므로, 대신 **Search Console / Bing Webmaster에 sitemap을 한 번 제출**하면

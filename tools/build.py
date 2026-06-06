@@ -13,6 +13,7 @@ Output: HTML files + sitemap.xml + robots.txt + site.webmanifest at repo root.
 import os
 import json
 import re
+import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -2571,11 +2572,13 @@ def build_meta_files():
             urls.append(f"/gwanak-gu/{d['slug']}/")
     prio = {"/": "1.0", "/gwanak-gu/": "0.9", "/gwanak-gu/area/": "0.9",
             "/gwanak-gu/stations/": "0.9"}
+    lastmod = UPDATED  # W3C date (YYYY-MM-DD) — 네이버·구글 모두 인식
     items = ""
     for u in urls:
         p = prio.get(u, "0.8" if u.count("/") <= 2 else "0.75")
         freq = "daily" if u == "/" else "weekly"
         items += (f"  <url><loc>{BASE_URL}{u}</loc>"
+                  f"<lastmod>{lastmod}</lastmod>"
                   f"<changefreq>{freq}</changefreq><priority>{p}</priority></url>\n")
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -2583,12 +2586,55 @@ def build_meta_files():
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap)
 
-    robots = ("User-agent: *\nAllow: /\nDisallow: /tools/\n\n"
-              "User-agent: GPTBot\nAllow: /\n"
-              "User-agent: ClaudeBot\nAllow: /\n"
-              "User-agent: Google-Extended\nAllow: /\n\n"
-              f"Sitemap: {BASE_URL}/sitemap.xml\n"
-              f"Host: {BASE_URL.replace('https://','')}\n")
+    # --- RSS 2.0 피드 (네이버 서치어드바이저 RSS 제출용 · 빠른 수집) ---
+    def _xml(s):
+        return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                 .replace('"', "&quot;"))
+    def _meta_of(u):
+        rel = "index.html" if u == "/" else os.path.join(u.strip("/"), "index.html")
+        try:
+            h = open(os.path.join(ROOT, rel), encoding="utf-8").read()
+            t = re.search(r"<title>(.*?)</title>", h).group(1)
+            d = re.search(r'name="description" content="(.*?)"', h).group(1)
+            return t, d
+        except Exception:
+            return BRAND, ""
+    rfc822 = datetime.datetime.strptime(UPDATED, "%Y-%m-%d").strftime(
+        "%a, %d %b %Y 09:00:00 +0900")
+    rss_items = ""
+    for u in urls:
+        t, d = _meta_of(u)
+        rss_items += (
+            "  <item>"
+            f"<title>{_xml(t)}</title>"
+            f"<link>{BASE_URL}{u}</link>"
+            f'<guid isPermaLink="true">{BASE_URL}{u}</guid>'
+            f"<description>{_xml(d)}</description>"
+            f"<pubDate>{rfc822}</pubDate>"
+            "</item>\n")
+    rss = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n'
+           f"<title>{_xml(BRAND)}</title>\n"
+           f"<link>{BASE_URL}/</link>\n"
+           f'<atom:link href="{BASE_URL}/rss.xml" rel="self" type="application/rss+xml"/>\n'
+           "<description>서울 관악구 방문 건강관리(출장마사지) 예약 안내</description>\n"
+           "<language>ko-KR</language>\n"
+           f"<lastBuildDate>{rfc822}</lastBuildDate>\n"
+           + rss_items + "</channel>\n</rss>\n")
+    with open(os.path.join(ROOT, "rss.xml"), "w", encoding="utf-8") as f:
+        f.write(rss)
+
+    # --- robots.txt (네이버 Yeti·다음·구글·빙 명시 허용 + 사이트맵/RSS) ---
+    host = BASE_URL.replace("https://", "").replace("http://", "")
+    allow_bots = ["Googlebot", "Googlebot-Image", "Bingbot",
+                  "Yeti", "NaverBot", "Daumoa"]  # Yeti/NaverBot=네이버, Daumoa=다음
+    ai_bots = ["GPTBot", "ClaudeBot", "Google-Extended", "PerplexityBot"]
+    robots = "User-agent: *\nAllow: /\nDisallow: /tools/\n\n"
+    robots += "".join(f"User-agent: {b}\nAllow: /\n" for b in allow_bots) + "\n"
+    robots += "".join(f"User-agent: {b}\nAllow: /\n" for b in ai_bots) + "\n"
+    robots += (f"Sitemap: {BASE_URL}/sitemap.xml\n"
+               f"Sitemap: {BASE_URL}/rss.xml\n"
+               f"Host: {host}\n")
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(robots)
 
