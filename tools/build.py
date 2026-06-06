@@ -44,6 +44,10 @@ REGIONS = [
         "slug": "bongcheon-area",
         "name": "봉천권역",
         "summary": "서울대입구역·봉천역·낙성대역 2호선 라인을 따라 이어지는 관악구 동부 주거·상업 권역입니다.",
+        "stations": ["seoul-national-university-station", "bongcheon-station", "nakseongdae-station"],
+        "long": [
+            "봉천권역은 서울대입구역에서 봉천역, 낙성대역으로 이어지는 2호선 라인을 따라 생활권이 형성되어 있습니다. 관악구청·관악중앙시장 등 행정·상업 인프라가 모여 있어 평일 저녁과 주말 모두 주거지·오피스텔 방문 문의가 고르게 들어옵니다.",
+            "샤로수길과 서울대입구역 일대는 청년·1인 가구 비중이 높아 원룸·오피스텔 방문이 많고, 은천동·인헌동 쪽은 대단지 아파트와 학군지가 많아 가족 단위 방문이 늘어나는 편입니다. 예약 데이터 기준 평균 도착 시간은 봉천권역 19~23분 내외입니다."],
         "dongs": [
             {"slug": "bongcheon-dong", "name": "봉천동", "arrival": 20,
              "landmarks": "서울대입구역(2호선), 봉천역(2호선), 관악구청 일대",
@@ -85,6 +89,11 @@ REGIONS = [
         "slug": "sillim-area",
         "name": "신림권역",
         "summary": "신림역·서원역·서울대벤처타운역·관악산역을 따라 이어지는 관악구 최대 주거·상업 권역입니다.",
+        "stations": ["sillim-station", "danggok-station", "seowon-station",
+                     "seoul-national-university-venture-town-station", "gwanaksan-station"],
+        "long": [
+            "신림권역은 2호선과 신림선이 함께 지나는 신림역을 중심으로 서원역·서울대벤처타운역·관악산역으로 이어지는 관악구 최대 생활권입니다. 신림중앙시장과 순대타운을 낀 상권 주변으로 원룸·오피스텔이 밀집해 있어 심야 시간대 방문 문의가 특히 많습니다.",
+            "대학동 고시촌과 서울대 방면은 학생·청년층 방문이 많고, 난곡동·난향동 등 산자락 생활권은 정주형 주거 비중이 높습니다. 같은 신림권역 안에서도 위치에 따라 평균 도착 시간이 18~27분 내외로 달라집니다."],
         "dongs": [
             {"slug": "sillim-dong", "name": "신림동", "arrival": 18,
              "landmarks": "신림역(2호선·신림선), 신림중앙시장, 순대타운 일대",
@@ -129,6 +138,21 @@ REGIONS = [
         "slug": "namhyeon-area",
         "name": "남현권역",
         "summary": "사당역과 예술인마을을 끼고 관악 동남쪽 생활권이 묶이는 권역입니다.",
+        "stations": [],
+        "long": [
+            "남현권역은 관악구 동남쪽 끝에 위치하며, 사당역(2·4호선) 생활권과 맞닿아 있는 남현동을 중심으로 합니다. 예술인마을과 관악산 둘레길을 낀 조용한 주택가가 많아 자택 방문 문의가 주를 이루며, 단독·다세대 주택 비중이 높은 편입니다.",
+            "사당역은 2호선과 4호선이 만나는 환승역으로 유동 인구가 많지만, 행정구역상 사당역 인근은 남현동 생활권으로 안내드립니다. 별도의 역 페이지를 만들지 않고 남현동 본문에서 사당역 생활권을 함께 다루며, 평균 도착 시간은 26분 내외입니다."],
+        "extra": [
+            ("남현동과 사당역 생활권", [
+                "남현권역의 유일한 행정동인 남현동은 사당역(2·4호선)을 일상 생활권으로 두고 있습니다. 사당역은 강남·동작 방면 이동이 편리해 직장인 1인 가구가 많고, 예술인마을 안쪽으로는 단독·다세대 주택과 빌라가 모여 있어 가족 단위 자택 방문도 꾸준합니다.",
+                "행정구역상 사당역은 동작구와 관악구에 걸쳐 있어, 사당역 인근에서 출장마사지를 찾는 분들은 위치에 따라 남현동 생활권으로 안내드립니다. 별도의 사당역 페이지를 만들지 않고 이 권역과 남현동 본문에서 함께 다루는 이유입니다."]),
+            ("남현권역 방문 안내", [
+                "남현동 일대는 관악산 자락과 가까워 경사진 골목과 일방통행 구간이 많습니다. 예약 시 정확한 주소와 가까운 기준점(사당역 출구, 예술인마을 입구 등)을 함께 알려주시면 평균 26분 내외로 도착할 수 있습니다.",
+                "조용한 주택가 특성상 야간에는 공동현관·주차 안내가 중요합니다. 출입 방법과 연락 가능한 번호를 미리 남겨주시면 방문이 한결 매끄럽습니다."]),
+            ("남현권역에서 많이 찾는 관리", [
+                "남현권역은 자택에서 받는 피로 회복·아로마 관리 문의가 특히 많습니다. 단독·다세대 주택이 많아 가족과 함께 받는 커플·가족 방문 관리 수요도 꾸준한 편입니다.",
+                "코스별 상세 설명과 정찰 요금은 페이지마다 반복하지 않고 코스안내에서 확인하실 수 있으며, 남현동 상세 생활권은 남현동 페이지에서 안내드립니다."]),
+        ],
         "dongs": [
             {"slug": "namhyeon-dong", "name": "남현동", "arrival": 26,
              "landmarks": "사당역(2·4호선), 예술인마을, 남현동 주거지 일대",
@@ -283,6 +307,34 @@ STATIONS = [
         ("관악산역은 어느 노선인가요?", "관악산역(서울대)은 신림선 종점 역으로, 서울대학교·대학동 생활권과 가깝습니다."),
         ("관악산역 도착 시간은 어느 정도인가요?", "평균 25분 내외이며, 시간대와 위치에 따라 달라질 수 있습니다.")]},
 ]
+
+# 역별 고유 단락(역세권 특징) — 도어웨이 회피용 1차 정보
+STATION_DETAIL = {
+    "sillim-station": [
+        "신림역은 2호선과 신림선이 만나는 환승역으로, 관악구에서 유동 인구와 검색 수요가 가장 많은 역세권입니다. 신림중앙시장·순대타운·고시촌 상권을 따라 원룸과 오피스텔이 빽빽하게 들어서 있어, 자정 이후 심야 시간대에도 방문 문의가 끊이지 않는 편입니다.",
+        "역 주변은 골목과 경사로가 많아 같은 신림역 인근이라도 위치에 따라 도착 시간이 달라집니다. 예약 시 정확한 건물명과 출구 번호, 공동현관 출입 방법을 함께 알려주시면 평균 18분 내외로 도착할 수 있습니다."],
+    "seoul-national-university-station": [
+        "서울대입구역은 2호선 단일 역이지만 샤로수길이라는 대형 상권을 끼고 있어 청년·직장인 방문 문의가 많은 역세권입니다. 봉천동 주거지와 청룡동 원룸촌이 역을 중심으로 펼쳐져 있어, 평일 퇴근 이후와 주말 저녁에 예약이 집중되는 편입니다.",
+        "역 일대는 오피스텔과 도시형 생활주택이 많아 건물 출입 절차가 제각각입니다. 예약 시 호수와 출입 방법을 미리 알려주시면 샤로수길 혼잡 시간대에도 평균 19분 내외로 도착할 수 있습니다."],
+    "bongcheon-station": [
+        "봉천역은 관악중앙시장과 대단지 아파트가 어우러진 봉천 중심 역세권으로, 1인 가구와 가족 단위 방문이 고르게 들어옵니다. 남부순환로(관악구 남부순환로 지하1721)를 따라 상권과 주거지가 이어져 낮부터 밤까지 시간대별 문의가 비교적 고른 편입니다.",
+        "은천동·중앙동 쪽 대단지 아파트는 동·호수와 공동현관 비밀번호만 정확히 알려주시면 진입이 빠릅니다. 봉천역 인근은 평균 20분 내외로 도착하며, 주말 저녁에는 다소 길어질 수 있어 사전 예약을 권장드립니다."],
+    "nakseongdae-station": [
+        "낙성대역은 낙성대공원과 인헌동 학군지를 낀 비교적 조용한 정주형 역세권입니다. 강감찬 장군 사적지인 낙성대공원 주변으로 아파트와 빌라가 모여 있어, 가족 단위와 직장인 방문 문의가 많은 편입니다.",
+        "행운동·인헌동 방면은 언덕 지형이 많아 차량 진입로가 한정적입니다. 예약 시 가까운 출구나 큰 건물을 기준점으로 알려주시면 평균 22분 내외로 도착할 수 있습니다."],
+    "danggok-station": [
+        "당곡역은 2022년 개통한 신림선 역으로, 신림 남부의 신원동·서원동 주거 생활권과 신림역 상권 사이를 잇습니다. 비교적 최근 정비된 주거지가 많아 빌라·소형 아파트 방문 문의가 꾸준한 편입니다.",
+        "신림선은 배차가 촘촘해 역 접근성이 좋지만, 당곡역 일대는 골목이 많아 위치 안내가 중요합니다. 예약 시 정확한 주소와 출입 방법을 알려주시면 평균 21분 내외로 도착할 수 있습니다."],
+    "seowon-station": [
+        "서원역은 신림선을 따라 서원동 주거 밀집지와 신림역 상권을 연결하는 역세권입니다. 빌라·다세대 주택이 많은 정주형 생활권으로, 저녁 시간대 자택 방문 문의가 주를 이룹니다.",
+        "서원동 일대는 일방통행과 경사 골목이 섞여 있어 도보 진입이 빠른 경우가 많습니다. 예약 시 건물명과 층·호수를 함께 알려주시면 평균 22분 내외로 도착할 수 있습니다."],
+    "seoul-national-university-venture-town-station": [
+        "서울대벤처타운역은 신림선 역으로, 대학동 고시촌과 서울대학교 진입로를 끼고 있어 학생·청년 1인 가구 방문이 많은 역세권입니다. 고시원·원룸이 밀집한 특성상 시험 기간 전후로 예약 패턴이 달라지는 편입니다.",
+        "고시촌은 골목이 좁고 건물이 빽빽해 호수와 건물명 확인이 특히 중요합니다. 예약 시 출입 방법을 미리 알려주시면 평균 24분 내외로 도착할 수 있습니다."],
+    "gwanaksan-station": [
+        "관악산역(서울대)은 신림선 종점으로, 서울대학교 정문과 대학동 생활권의 관문 역할을 합니다. 캠퍼스와 관악산 둘레길을 낀 지역 특성상 학생·연구원과 등산객 숙소 방문 문의가 섞여 들어옵니다.",
+        "종점 특성상 차량보다 신림선 도보 접근이 빠른 경우가 많습니다. 예약 시 정확한 주소와 기준점을 알려주시면 평균 25분 내외로 도착할 수 있습니다."],
+}
 
 # 역 그룹(메뉴·허브용)
 STATION_GROUPS = [
@@ -1082,6 +1134,8 @@ def org_ld():
         "@context": "https://schema.org", "@type": "Organization",
         "name": BRAND, "legalName": COMPANY["name"], "url": BASE_URL + "/",
         "telephone": PHONE_DISP,
+        "logo": BASE_URL + "/icon-512.png",
+        "image": BASE_URL + "/assets/og-cover.jpg",
         "address": {"@type": "PostalAddress", "addressLocality": "관악구",
                     "addressRegion": "서울특별시", "addressCountry": "KR"},
     }
@@ -1104,6 +1158,7 @@ def localbiz_ld(name=None, area="서울특별시 관악구", path="/"):
         "areaServed": {"@type": "AdministrativeArea", "name": area},
         "address": {"@type": "PostalAddress", "addressLocality": "관악구",
                     "addressRegion": "서울특별시", "addressCountry": "KR"},
+        "image": BASE_URL + "/assets/og-cover.jpg",
         "openingHoursSpecification": {"@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
             "opens": "00:00", "closes": "23:59"},
@@ -1117,6 +1172,7 @@ def service_ld(name, desc, path):
         "name": name, "description": desc, "serviceType": "방문 건강관리(마사지) 서비스",
         "provider": {"@type": "Organization", "name": BRAND, "url": BASE_URL + "/"},
         "areaServed": {"@type": "AdministrativeArea", "name": "서울특별시 관악구"},
+        "image": BASE_URL + "/assets/og-cover.jpg",
         "url": BASE_URL + path,
     }
 
@@ -1409,13 +1465,38 @@ def build_area_hub():
             f'<a href="/gwanak-gu/{r["slug"]}/" class="grad">{r["name"]}</a></h3>'
             f'<p class="sec-lead">{r["summary"]}</p>'
             f'<div class="grid g3" style="margin-top:18px">{dong_links}</div></div>')
-    body = (breadcrumb(trail) +
-        '<section class="block"><div class="wrap">'
+    total_dong = sum(len(r["dongs"]) for r in REGIONS)
+    overview = (
+        '<section class="block"><div class="wrap" style="max-width:820px">'
         '<span class="eyebrow"><span class="pulse"></span>AREA GUIDE</span>'
         '<h2 class="sec">지역별 안내</h2>'
-        '<p class="sec-lead">관악구를 봉천·신림·남현 3개 생활 권역으로 나누어 동별 방문 안내를 제공합니다. '
-        '주요 역 중심 안내는 <a href="/gwanak-gu/stations/">지하철역별 안내</a>에서 확인하세요.</p>'
-        + blocks + '</div></section>' + price_menu_block() + cta_band())
+        f'<p class="sec-lead" style="max-width:760px">관악구를 봉천·신림·남현 3개 생활 권역, 총 {total_dong}개 동으로 '
+        '나누어 동별 방문 안내를 제공합니다. 주요 역 중심 안내는 '
+        '<a href="/gwanak-gu/stations/">지하철역별 안내</a>에서 따로 확인하실 수 있습니다.</p>'
+        '<div class="article" style="max-width:820px;margin-top:8px">'
+        '<p>관악구는 서울 남부에 위치한 인구 약 49만 명의 자치구로, 봉천동·신림동·남현동 세 개의 법정동 아래 여러 '
+        '행정동이 묶여 있습니다. 간다GO 관악 출장마사지는 이 행정동을 생활권 단위로 묶어 봉천권역·신림권역·남현권역으로 '
+        '나누고, 권역마다 평균 도착 시간과 생활권 특성을 다르게 안내합니다.</p>'
+        '<p><strong>봉천권역</strong>은 서울대입구역·봉천역·낙성대역 등 2호선 라인을 따라 형성된 동부 주거·상업권으로, '
+        '샤로수길 상권과 대단지 아파트가 어우러져 1인 가구와 가족 단위 방문이 고르게 들어옵니다. '
+        '<strong>신림권역</strong>은 2호선과 신림선이 만나는 신림역을 중심으로 한 관악구 최대 생활권으로, 원룸·오피스텔과 '
+        '대학동 고시촌이 밀집해 심야 방문 문의가 특히 많습니다. <strong>남현권역</strong>은 사당역 생활권과 맞닿은 '
+        '동남부 주택가로, 조용한 자택 방문이 주를 이룹니다.</p>'
+        '<p>아래에서 권역을 선택하면 동별 상세 안내로 이동합니다. 평균 도착 시간은 신림동 18분, 서울대입구역 19분, '
+        '봉천동 20분, 낙성대동 22분, 대학동 25분, 남현동 26분 내외이며(예약 데이터 기준), 같은 권역 안에서도 위치에 '
+        '따라 달라질 수 있습니다.</p>'
+        '</div></div></section>')
+    hub_faq = [
+        ("관악구는 몇 개 권역으로 나뉘나요?",
+         f"봉천·신림·남현 3개 생활 권역, 총 {total_dong}개 동으로 나누어 안내드립니다. 권역을 선택하면 동별 상세 안내를 보실 수 있습니다."),
+        ("우리 동이 목록에 없으면 방문이 안 되나요?",
+         "은천·성현·청룡·서원·신원동처럼 봉천동·신림동의 행정동은 대표 동 안내에 통합되어 있습니다. 목록에 동명이 보이지 않아도 예약 시 위치를 알려주시면 가능 여부를 확인해 드립니다."),
+        ("지하철역 기준으로도 안내가 있나요?",
+         "네. 2호선·신림선 주요 역세권은 지역별 안내와 별도로 지하철역별 안내에서 역별로 제공합니다."),
+    ]
+    body = (breadcrumb(trail) + overview +
+        '<section class="block"><div class="wrap">' + blocks + '</div></section>'
+        + price_menu_block() + faq_block(hub_faq) + cta_band())
     item_list = {
         "@context": "https://schema.org", "@type": "CollectionPage",
         "name": "관악구 출장마사지 지역별 안내", "url": BASE_URL + "/gwanak-gu/area/",
@@ -1423,8 +1504,8 @@ def build_area_hub():
                      "url": BASE_URL + f"/gwanak-gu/{r['slug']}/"} for r in REGIONS],
     }
     html = page("/gwanak-gu/area/", "관악구 출장마사지 가능 지역 | 간다GO 지역별 안내",
-        "간다GO 관악 출장마사지 지역별 안내 - 봉천권역, 신림권역, 남현권역 3개 권역별 동별 방문 안내를 제공합니다.",
-        "area", body, [bc_ld(trail), item_list, offer_ld()])
+        "간다GO 관악 출장마사지 지역별 안내 - 봉천권역, 신림권역, 남현권역 3개 권역과 22개 동, 2호선·신림선 역세권별 방문 안내를 제공합니다.",
+        "area", body, [bc_ld(trail), item_list, faq_ld(hub_faq), offer_ld()])
     write("/gwanak-gu/area/", html)
 
 
@@ -1443,22 +1524,42 @@ def build_area_pages():
         sub_notes = [d.get("sub_note") for d in r["dongs"] if d.get("sub_note")]
         chips = "".join(
             f'<span class="chip"><b>{d["name"]}</b> 평균 {d["arrival"]}분</span>' for d in r["dongs"])
+        # 권역과 연결된 지하철역(역세권 페이지) 내부링크
+        st_links = [f'<a href="/gwanak-gu/stations/{ss}/">{station_by_slug(ss)["name"]} 출장마사지</a>'
+                    for ss in r.get("stations", []) if station_by_slug(ss)]
         area_faq = [
             (f"{r['name']}은 어디까지 방문 가능한가요?",
              "권역 내 " + "·".join(d["name"] for d in r["dongs"]) + " 일대를 안내드리며, 정확한 가능 여부는 예약 시간과 위치에 따라 확인해 드립니다."),
             (f"{r['name']} 예약은 어떻게 하나요?",
              "전화 또는 문의로 동·시간·코스를 말씀해 주시면 방문 가능 시간을 확정해 드립니다."),
         ]
+        if st_links:
+            stn_names = "·".join(station_by_slug(ss)["name"] for ss in r["stations"] if station_by_slug(ss))
+            area_faq.append((f"{r['name']}은 어느 지하철역과 가깝나요?",
+                f"{stn_names} 등과 가까우며, 역 중심 안내는 지하철역별 안내에서 역별로 확인하실 수 있습니다."))
         sections = [
             (f"{r['name']} 방문 가능 동", [
                 f"{r['name']}은 " + "·".join(d["name"] for d in r["dongs"]) + " 일대를 포함합니다. 원하는 동을 눌러 상세 안내를 확인하세요.",
                 ("html", f'<div class="chips" style="margin-bottom:18px">{chips}</div>'
                          f'<div class="grid g3">{dong_cards}</div>')]),
-            ("권역의 특징", [r["summary"]]),
+            (f"{r['name']} 생활·교통 안내", r.get("long", [r["summary"]])),
             ("동별 방문 안내", dong_lines),
         ]
+        # 권역 지하철역 안내(역세권 페이지 내부링크) — 도어웨이 회피 위해 권역마다 고유
+        if st_links:
+            sections.append((f"{r['name']} 지하철역 안내", [
+                f"{r['name']}은 다음 역과 가까워, 역 인근에서 찾는 분들을 위해 역세권별 안내를 따로 제공합니다.",
+                ("ul", st_links),
+                '전체 역 목록은 <a href="/gwanak-gu/stations/">관악구 지하철역 전체 안내</a>에서 확인하실 수 있습니다.']))
+        else:
+            sections.append((f"{r['name']} 지하철역 안내", [
+                f"{r['name']}은 사당역(2·4호선) 생활권과 가깝습니다. 사당역 인근은 별도 역 페이지 대신 "
+                f'<a href="/gwanak-gu/namhyeon-dong/">남현동</a> 본문에서 함께 안내드리며, 관악구 전체 역 안내는 '
+                '<a href="/gwanak-gu/stations/">지하철역별 안내</a>에서 확인하실 수 있습니다.']))
         if sub_notes:
             sections.append(("세부 지역 안내", sub_notes))
+        for ex_title, ex_blocks in r.get("extra", []):
+            sections.append((ex_title, ex_blocks))
         sections.append(("예약·코스·위생은 전용 안내에서", [
             "권역 내 예약 가능 시간·준비물·위생 기준·코스 요금은 페이지마다 반복하지 않고 전용 안내에서 확인하실 수 있습니다.",
             ("ul", ['<a href="/gwanak-gu/hours/">예약 가능 시간 안내</a>',
@@ -1626,17 +1727,13 @@ def build_dong_pages():
                     f"{name}과 가까운 같은 권역 생활권도 함께 확인할 수 있습니다.",
                     ("ul", region_links), region_tail]),
                 (f"{name}에서 많이 찾는 관리 코스", [
-                    f"{name}({d['character']})에서는 피로 회복·스포츠·아로마 관리 문의가 많습니다. 코스별 상세 설명과 요금은 아래 링크에서 확인하세요.",
-                    ("ul", ['<a href="/course/">전체 코스 보기</a>', '<a href="/course/fatigue/">피로 회복 관리</a>',
-                            '<a href="/course/aroma/">아로마 관리</a>', '<a href="/course/sports/">스포츠 관리</a>',
-                            '<a href="/course/couple/">커플·가족 방문 관리</a>', '<a href="/course/price/">가격 안내</a>'])]),
+                    f"{name}({d['character']})에서는 피로 회복·아로마·스포츠 관리 문의가 많습니다. "
+                    f'코스별 상세 설명과 요금은 <a href="/course/">코스안내</a>·<a href="/course/price/">가격 안내</a>에서 확인하세요.']),
                 (f"{name} 예약·준비·위생 안내", [
-                    f"{name} 방문 예약은 시간대와 배정 상황에 따라 가능 여부가 달라지며, 평균 {d['arrival']}분 내외로 도착합니다. 저녁·주말은 문의가 몰릴 수 있어 사전 예약을 권장드립니다.",
-                    "예약 가능 시간, 방문 전 준비물, 위생·안전 기준은 페이지마다 반복하지 않고 전용 안내에서 자세히 확인하실 수 있습니다.",
-                    ("ul", ['<a href="/gwanak-gu/hours/">예약 가능 시간 안내</a>',
-                            '<a href="/gwanak-gu/checklist/">이용 전 확인사항(준비물)</a>',
-                            '<a href="/gwanak-gu/safety/">위생 및 안전 안내</a>',
-                            '<a href="/course/price/">가격 안내</a>'])]),
+                    f"{name} 방문은 평균 {d['arrival']}분 내외로 도착하며, 저녁·주말은 문의가 몰려 사전 예약을 권장드립니다. "
+                    f'예약 시간은 <a href="/gwanak-gu/hours/">예약 가능 시간</a>, 준비물은 '
+                    f'<a href="/gwanak-gu/checklist/">이용 전 확인사항</a>, 위생 기준은 '
+                    f'<a href="/gwanak-gu/safety/">위생 및 안전 안내</a>에서 확인하실 수 있습니다.']),
             ]
             dong_faq = [
                 (f"{name} 전 지역 방문이 가능한가요?",
@@ -1750,6 +1847,7 @@ def build_station_pages():
                 f"시간·코스·인원을 확인한 뒤 방문 가능 여부를 안내드립니다.",
                 '예약 방법·결제 절차는 <a href="/reservation/">예약안내</a>, 처음 이용 시 진행 흐름은 '
                 '<a href="/guide/">이용가이드</a>에서 확인하실 수 있습니다.']),
+            (f"{name} 역세권 특징", STATION_DETAIL.get(slug, [s["summary"]])),
             (f"{name} 인근 방문 가능 생활권", zone_blocks),
             (f"{name} 주변 관악구 지역 안내", [
                 f"{name}과 가까운 관악구 생활권 안내도 함께 확인하실 수 있습니다. "
