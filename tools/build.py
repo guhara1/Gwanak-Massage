@@ -1471,8 +1471,7 @@ def build_area_hub():
         '<span class="eyebrow"><span class="pulse"></span>AREA GUIDE</span>'
         '<h2 class="sec">지역별 안내</h2>'
         f'<p class="sec-lead" style="max-width:760px">관악구를 봉천·신림·남현 3개 생활 권역, 총 {total_dong}개 동으로 '
-        '나누어 동별 방문 안내를 제공합니다. 주요 역 중심 안내는 '
-        '<a href="/gwanak-gu/stations/">지하철역별 안내</a>에서 따로 확인하실 수 있습니다.</p>'
+        '나누어 동별 방문 안내를 제공합니다.</p>'
         '<div class="article" style="max-width:820px;margin-top:8px">'
         '<p>관악구는 서울 남부에 위치한 인구 약 49만 명의 자치구로, 봉천동·신림동·남현동 세 개의 법정동 아래 여러 '
         '행정동이 묶여 있습니다. 간다GO 관악 출장마사지는 이 행정동을 생활권 단위로 묶어 봉천권역·신림권역·남현권역으로 '
@@ -1482,9 +1481,8 @@ def build_area_hub():
         '<strong>신림권역</strong>은 2호선과 신림선이 만나는 신림역을 중심으로 한 관악구 최대 생활권으로, 원룸·오피스텔과 '
         '대학동 고시촌이 밀집해 심야 방문 문의가 특히 많습니다. <strong>남현권역</strong>은 사당역 생활권과 맞닿은 '
         '동남부 주택가로, 조용한 자택 방문이 주를 이룹니다.</p>'
-        '<p>아래에서 권역을 선택하면 동별 상세 안내로 이동합니다. 평균 도착 시간은 신림동 18분, 서울대입구역 19분, '
-        '봉천동 20분, 낙성대동 22분, 대학동 25분, 남현동 26분 내외이며(예약 데이터 기준), 같은 권역 안에서도 위치에 '
-        '따라 달라질 수 있습니다.</p>'
+        '<p>아래에서 권역을 선택하면 동별 상세 안내로 이동합니다. 평균 도착 시간은 신림동 18분, 봉천동 20분, '
+        '남현동 26분 내외이며(예약 데이터 기준), 같은 권역 안에서도 위치에 따라 달라질 수 있습니다.</p>'
         '</div></div></section>')
     hub_faq = [
         ("관악구는 몇 개 권역으로 나뉘나요?",
@@ -1518,8 +1516,12 @@ def build_area_pages():
             f'<a class="card reveal" href="/gwanak-gu/{d["slug"]}/"><div class="k">동 안내</div>'
             f'<h3>{d["name"]} 출장마사지</h3><p>{d["landmarks"]}</p>'
             f'<span class="more">자세히 →</span></a>' for d in r["dongs"])
-        dong_lines = [f'<a href="/gwanak-gu/{d["slug"]}/">{d["name"]}</a>은 {d["character"]}로, {d["landmarks"]} 인근을 평균 {d["arrival"]}분 내외로 방문합니다.'
-                      for d in r["dongs"]]
+        arr_min = min(d["arrival"] for d in r["dongs"])
+        arr_max = max(d["arrival"] for d in r["dongs"])
+        arr_txt = f"{arr_min}분" if arr_min == arr_max else f"{arr_min}~{arr_max}분"
+        dong_lines = [
+            f'{r["name"]} 동별 평균 도착 시간은 {arr_txt} 내외입니다(예약 데이터 기준). '
+            f'위 카드에서 동을 선택하면 생활권·랜드마크·세부 도착 시간과 동별 자주 묻는 질문을 확인하실 수 있습니다.']
         # 동별 sub-notes (행정동 통합/인접역 흡수 등)
         sub_notes = [d.get("sub_note") for d in r["dongs"] if d.get("sub_note")]
         chips = "".join(
